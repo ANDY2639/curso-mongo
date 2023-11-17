@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  padding: 20px;
+  gap: 10px;
+
+  &-control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &-submit {
+    all:unset;
+    padding: 5px;
+    color: $white;
+    background: blue;
+    text-align: center;
+    border-radius: 5px;
+  }
+}

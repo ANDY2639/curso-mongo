@@ -2,8 +2,19 @@ import { Schema, model } from "mongoose";
 
 export const Course = model(
   "Course",
-  new Schema({
-    title: String,
-    category: String,
-  })
+  new Schema(
+    {
+      title: {
+        type: String,
+        required: true,
+      },
+      category: {
+        type: String,
+        required: true,
+      },
+    },
+    {
+      timestamps: true,
+    }
+  )
 );

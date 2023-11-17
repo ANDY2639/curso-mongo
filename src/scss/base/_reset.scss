@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body { font-family: 'JetBrains Mono'; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol { list-style: none; }
+
+// .container {
+//   max-width: 1024px;
+//   margin: 0 auto;
+// }
+
+// .container-fluid { width: 100%; }
+
+.gutter { padding: 0 15px; }
+
+.hidden { display: none; }
+
+.text-center { text-align: center; }
