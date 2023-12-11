@@ -5,6 +5,7 @@ import { engine } from "express-handlebars";
 import { getDirname } from "./helpers/utils.js";
 import { indexRouter, courseRouter, taskRouter } from "./routes/index.js";
 import { allowInsecurePrototypeAccess } from "@handlebars/allow-prototype-access";
+import morgan from "morgan";
 
 // Create app instance
 const app = express();
@@ -15,18 +16,16 @@ app.use(express.json());
 // Decode Form URL Encoded data
 app.use(express.urlencoded({ extended: true }));
 
+// Morgan
+app.use(morgan('dev'));
+
+
 // Public static files
 app.use(express.static("public"));
 
 // Views
 app.set("views", path.join(getDirname(import.meta.url), "views"));
-app.engine(
-  ".hbs",
-  engine({
-    extname: ".hbs",
-    handlebars: allowInsecurePrototypeAccess(Handlebars),
-  })
-);
+app.engine(".hbs", engine({ extname: ".hbs", handlebars: allowInsecurePrototypeAccess(Handlebars) }));
 app.set("view engine", ".hbs");
 
 // Routes
